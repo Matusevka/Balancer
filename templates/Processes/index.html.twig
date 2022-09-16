@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Index{% endblock %}
+
+{% block body %}
+<header>
+    <div class="logo"><h1><a href="/">Balancer</a></h1></div>
+</header>
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Название процесса</th>
+            <th scope="col">Кол-во процессора</th>
+            <th scope="col">Кол-во памяти</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for process in processes %}
+        <tr>
+                <th scope="row">{{process.id}}</th>
+                <td style="width: 200px;">{{process.name}}</td>
+                <td>{{process.countProcess}}</td>
+                <td>{{process.memory}}</td>
+                <td style="width: 200px;"><a href="{{ path('removeProc', {'id' :process.id})}}">удалить</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+index:
+    path: /
+    controller: App\Controller\WorksController::index
+
+add:
+    path: /add
+    controller: App\Controller\WorksController::add
+
+carpressed:
+    path: /cars/{id}
+    controller: App\Controller\WorksController::carpressed
+
+removeWork:
+    path: /delete/{id}
+    controller: App\Controller\WorksController::remove
+    methods:    GET|HEADs
+
+process_add:
+    path: /processes/add
+    controller: App\Controller\ProcessesController::add
+    
+removeProc:
+    path: /deleteProc/{id}
+    controller: App\Controller\ProcessesController::remove
+    methods:    GET|HEADs
